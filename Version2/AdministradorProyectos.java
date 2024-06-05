@@ -47,19 +47,19 @@ public class AdministradorProyectos {
                 desarrolladores.add(dev.trim());
             }
 
-            System.out.println("Ingrese la categoría del proyecto:");
+            System.out.println("Ingrese la categorï¿½a del proyecto:");
             String categoria = scanner.nextLine();
 
-            System.out.println("Ingrese una breve descripción del proyecto:");
+            System.out.println("Ingrese una breve descripciï¿½n del proyecto:");
             String descripcion = scanner.nextLine();
 
             if (administrador.agregarProyecto(nombre, fechaInicio, fechaFin, desarrolladores, categoria, descripcion)) {
                 System.out.println("Proyecto '" + nombre + "' creado correctamente.");
             } else {
-                System.out.println("¡El proyecto ya existe!");
+                System.out.println("ï¿½El proyecto ya existe!");
             }
 
-            System.out.println("¿Desea agregar otro proyecto? (s/n)");
+            System.out.println("ï¿½Desea agregar otro proyecto? (s/n)");
             String respuesta = scanner.nextLine();
             if (!respuesta.equalsIgnoreCase("s")) {
                 continuar = false;
