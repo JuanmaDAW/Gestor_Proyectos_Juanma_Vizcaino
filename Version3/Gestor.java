@@ -1,4 +1,3 @@
-package Gestion_Proyecto;
 
 import java.io.*;
 import java.util.Scanner;
@@ -18,12 +17,12 @@ public class Gestor {
 	    	
 	    	do {
 	    		System.out.println();
-	    		System.out.println("1.-Añadir\n" + "2.-Borrar\n" + "3.-Listar\n" + "0.-Salir");
+	    		System.out.println("1.-AÃ±adir\n" + "2.-Borrar\n" + "3.-Listar\n" + "0.-Salir");
 	    		int opci = sc.nextInt();
 	    		
 	    		switch (opci) {
 				case 0:
-			        System.out.println("¡Hasta Pronto!");
+			        System.out.println("Â¡Hasta Pronto!");
 			        salir = true;
 				break;
 				case 1:
@@ -36,7 +35,7 @@ public class Gestor {
 					leerProyectosDesdeArchivo();
 				break;
 				default:
-					System.out.println("Elige una opción válida");
+					System.out.println("Elige una opciÃ³n vÃ¡lida");
 					break;
 				}	
 	    	}while(!salir);
@@ -64,8 +63,8 @@ public class Gestor {
 	            
 
 	            // Cerramos el archivo de salida
-	            System.out.println("Tamaño del archivo de salida: " + fsalida.size());
-	            fsalida.flush(); // Garantiza que se envía lo último que quedaba en el flujo
+	            System.out.println("TamaÃ±o del archivo de salida: " + fsalida.size());
+	            fsalida.flush(); // Garantiza que se envÃ­a lo Ãºltimo que quedaba en el flujo
 
 	        } finally {
 	            if (fsalida != null) {
@@ -78,12 +77,12 @@ public class Gestor {
 	        DataInputStream fentrada = null;
 
 	        try {
-	            // Se reabre el archivo, para leer la información guardada
+	            // Se reabre el archivo, para leer la informaciÃ³n guardada
 	            fentrada = new DataInputStream(new FileInputStream(ruta));
 
 	            // Leer y mostrar proyectos
 	            while (fentrada.available() > 0) {
-	                Proyecto proyecto = new Proyecto("", "", ""); // Se necesita un constructor vacío o por defecto
+	                Proyecto proyecto = new Proyecto("", "", ""); // Se necesita un constructor vacÃ­o o por defecto
 	                proyecto.leer(fentrada);
 	                proyecto.mostrarProyectos();
 	            }
@@ -117,7 +116,7 @@ public class Gestor {
                 } 
                 
                 else {
-                    System.err.println("El nombre del proyecto no puede estar vacío.");
+                    System.err.println("El nombre del proyecto no puede estar vacÃ­o.");
 
                 }
             }
@@ -135,7 +134,7 @@ public class Gestor {
                 } 
                 
                 else {
-                    System.err.println("La categoria no puede estar vacía.");
+                    System.err.println("La categoria no puede estar vacÃ­a.");
 
                 }
             }
@@ -154,7 +153,7 @@ public class Gestor {
                 } 
                 
                 else {
-                    System.err.println("El lider no puede estar vacío.");
+                    System.err.println("El lider no puede estar vacÃ­o.");
 
                 }
             }
