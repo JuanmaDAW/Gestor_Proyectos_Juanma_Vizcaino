@@ -1,0 +1,1 @@
+Version 4, incluye un menu mas avanzado, con más ocpiones, incluida la opción de filtrar por campos, además los datos que se guardan son serializables y se almacenan de manera permanente en el fichero, en este caso proyectos.ser
