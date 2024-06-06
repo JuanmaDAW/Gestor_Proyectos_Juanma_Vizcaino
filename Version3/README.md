@@ -1,1 +1,1 @@
-Version 3, versión con un menú básico, usando un fichero en txt, pero los datos no son persistentes todavía, al cerrar el programa los datos se pierden, y por último he añadido a esta nueva version un control de excepciones
+Versión 3, versión con un menú básico, usando un fichero en txt, pero los datos no son persistentes todavía, al cerrar el programa los datos se pierden, y por último he añadido a esta nueva version un control de excepciones

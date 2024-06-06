@@ -1,1 +1,1 @@
-Primera versión, estática, usando una colección de Arraylist y mostrando un menu para crear proyectos
+Primera versión, estática, usando una colección de Arraylist y mostrando un menú para crear proyectos
