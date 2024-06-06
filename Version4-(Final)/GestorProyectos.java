@@ -6,12 +6,12 @@ import java.util.Scanner;
 import java.io.*;
 
 public class GestorProyectos implements Serializable {
-	/* Responsabilidad:  Gestionar proyectos basado en el CRUD, con volcado y recuperaciÛn de datos
+	/* Responsabilidad:  Gestionar proyectos basado en el CRUD, con volcado y recuperaci√≥n de datos
 	 * en un fichero serializable
 	 * 
-	 * DescripciÛn: AplicaciÛn final de la asigntaura de ProgramaciÛn del IES ¡gora, curso 23/24
+	 * Descripci√≥n: Aplicaci√≥n final de la asigntaura de Programaci√≥n del IES √Ågora, curso 23/24
 	 * 
-	 * Autor: Juanma VizcaÌno Barquero
+	 * Autor: Juanma Vizca√≠no Barquero
 	 * 
 	 * Fecha Inicio: 15/05/2024
 	 * Fecha Final: 6/06/2024
@@ -27,7 +27,7 @@ public class GestorProyectos implements Serializable {
 	static String lideres[] = { "Marco", "Lidia", "Juanma", "Dani" };
 
 	// Ruta en windows
-	private static final String ruta = "C:\\Users\\Juanma01\\Desktop\\Aplicacion_Personal\\Proyectos\\proyectos.ser";
+	private static final String ruta = "proyectos.ser";
 
 	// Ruta en linux
 	// private static final String ruta =
@@ -98,7 +98,7 @@ public class GestorProyectos implements Serializable {
 					String nombre = atributosSc.nextLine();
 					proyecto.setNombre(nombre);
 					
-					System.out.println("CategorÌa: ");
+					System.out.println("Categor√≠a: ");
 					String categoria = atributosSc.nextLine();
 					proyecto.setCategoria(categoria);
 					
@@ -117,7 +117,7 @@ public class GestorProyectos implements Serializable {
 				}
 				guardarProyectos();
 		} else {
-			System.out.println("No se encontrÛ el proyecto con ID: " + id);
+			System.out.println("No se encontr√≥ el proyecto con ID: " + id);
 		}
 	}
 	
@@ -130,7 +130,7 @@ public class GestorProyectos implements Serializable {
 		int id = sc.nextInt();
 		if (proyectos.containsKey(id)) {
 			
-			System.out.println("øEst·s seguro? s/n");
+			System.out.println("¬øEst√°s seguro? s/n");
 			Scanner sc3 = new Scanner(System.in);
 			String respuesta = sc3.nextLine();
 			respuesta.toLowerCase();
@@ -145,7 +145,7 @@ public class GestorProyectos implements Serializable {
 			
 			
 		} else {
-			System.out.println("No se encontrÛ el proyecto con ID: " + id);
+			System.out.println("No se encontr√≥ el proyecto con ID: " + id);
 			
 		}
 		} else System.out.println("El campo ID solo admite enteros");
@@ -203,7 +203,7 @@ public class GestorProyectos implements Serializable {
 			break;
 		}
 		case 3: {
-			System.out.print("CategorÌa: ");
+			System.out.print("Categor√≠a: ");
             String categAux = sc.next();
             int cont = 0;
             
@@ -299,7 +299,7 @@ public class GestorProyectos implements Serializable {
 		}
 
 		default:
-			System.out.println("Introduce una opciÛn v·lida");
+			System.out.println("Introduce una opci√≥n v√°lida");
 			break;
 		}
 		
@@ -323,7 +323,7 @@ public class GestorProyectos implements Serializable {
 	
 	
 
-	// MÈtodo para cargar proyectos desde un archivo binario
+	// M√©todo para cargar proyectos desde un archivo binario
 	private void cargarProyectos() {
 		try (DataInputStream dis = new DataInputStream(new FileInputStream(ruta))) {
 			proyectos.clear();
@@ -335,7 +335,7 @@ public class GestorProyectos implements Serializable {
 				idSiguiente = Math.max(idSiguiente, proyecto.getId() + 1);
 			}
 		} catch (FileNotFoundException e) {
-			System.out.println("Archivo no encontrado. Se crear· un nuevo archivo al guardar.");
+			System.out.println("Archivo no encontrado. Se crear√° un nuevo archivo al guardar.");
 		} catch (IOException e) {
 			/* System.out.println("Error al cargar los proyectos: " + e.getMessage()); */
 		}
@@ -347,21 +347,21 @@ public class GestorProyectos implements Serializable {
 		boolean salir = false;
 
 		while (!salir) {
-			System.out.println("\nMen˙:");
+			System.out.println("\nMen√∫:");
 			System.out.println("1. Crear Nuevo Proyecto");
 			System.out.println("2. Listar Proyecto");
 			System.out.println("3. Modificar Proyecto");
 			System.out.println("4. Borrar Proyecto");
 			System.out.println("5. Filtrar por campo");
 			System.out.println("6. Salir");
-			System.out.print("Seleccione una opciÛn: ");
+			System.out.print("Seleccione una opci√≥n: ");
 			int opci = sc.nextInt();
 			sc.nextLine(); // Limpiar el buffer
 			
 
 			switch (opci) {
 			
-			case 1:  // OpciÛn 1, Crear un nuevo proyecto
+			case 1:  // Opci√≥n 1, Crear un nuevo proyecto
 				String nombre;
 				String categoria;
 				String lider;
@@ -382,14 +382,14 @@ public class GestorProyectos implements Serializable {
 				// Categoria del proyecto con scanner
 				boolean categoriaValida = false;
 				do {
-					String mostrarCateg = "CategorÌa: " + String.join(", ", categorias);
+					String mostrarCateg = "Categor√≠a: " + String.join(", ", categorias);
 			        System.out.println(mostrarCateg);
 			        categoria = sc.nextLine();
 					
 					if (categoria.contains("Big Data") || categoria.contains("I.Artificial") || categoria.contains("Ciberseguridad") || categoria.contains("Desarrollo Web")) {
 						categoriaValida = true;
 					} else {
-						System.out.println("Elija una categorÌa existente");
+						System.out.println("Elija una categor√≠a existente");
 					}
 					
 				} while (!categoriaValida);
@@ -438,7 +438,7 @@ public class GestorProyectos implements Serializable {
 						 presupuesto = sc.nextDouble();
 						 presupuestoValido = true;
 					} else {
-						System.out.println("Introduce un n˙mero decimal o entero");
+						System.out.println("Introduce un n√∫mero decimal o entero");
 						sc.next();
 					}
 					
@@ -448,30 +448,30 @@ public class GestorProyectos implements Serializable {
 				break;
 				
 				
-			case 2:  // OpciÛn 2, Listar los proyectos
+			case 2:  // Opci√≥n 2, Listar los proyectos
 				gestor.listarProyectos();
 				break;
 
-			case 3:  // OpciÛn 3, Modificar proyectos
+			case 3:  // Opci√≥n 3, Modificar proyectos
 				gestor.editarProyecto();
 				break;
 
-			case 4:  // OpciÛn 4, Borrar proyectos
+			case 4:  // Opci√≥n 4, Borrar proyectos
 				gestor.borrarProyecto();
 				break;
 				
 				
-			case 5: // OpciÛn 5, Filtrar por campos
+			case 5: // Opci√≥n 5, Filtrar por campos
 		        gestor.filtrar();
 				break;
 				
-			case 6:  // OpciÛn 6, Salir
-				System.out.println("°Hasta Pronto!");
+			case 6:  // Opci√≥n 6, Salir
+				System.out.println("¬°Hasta Pronto!");
 				salir = true;
 				break;
 				
 			default:
-				System.out.println("OpciÛn no v·lida.");
+				System.out.println("Opci√≥n no v√°lida.");
 				break;
 			}
 		}
